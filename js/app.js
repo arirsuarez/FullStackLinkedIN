@@ -243,3 +243,57 @@ var resultado = "";
 
 
 
+  //CICLOS | LOOPS | ITERADORES
+  // Son estructuras de control que sirven para repetir un conjunto de acciones
+  // Ciclos definidos (Sabemos cuantas veces se va a ejecutar) && Cíclos Indefinidos (No sabemos cuantas veces se va a ejecutar)
+
+  //C;iclos Definido:
+  //FOR
+
+  for (let i = 0; i < datoA; i++){
+      // console.log(i);
+      debugger; // Permite debuggear en el navegador nuestra app
+  }
+
+  //Cíclo Indefinido
+  //WHILE
+  // Cíclo que ejecuta instrucciones mientras una condición se cumpla
+
+  while(edad > 0) {
+      edad--;
+      debugger;
+  }
+
+  //DO WHILE
+  // Similar a While pero cambia el momento del código donde evaluamos la condición
+  // Ejecuta la acción y después consulta
+
+  do {
+      edad--;
+  }
+  while(edad>=1)
+
+
+  //CONTROL DE CíCLOS
+  // Controlan el flujo de los cíclos
+  // break | continue
+
+  var contador = 0;
+  var cuenta = 0;
+
+  for(contador =0; contador<=20; contador++){
+      if(contador == 5){
+          break // Rompe el cíclo, cuando se cumple esta condición sale del For
+      }
+      if (contador%2 == 0){
+          continue; //Si el módulo es 0 continue salta la parte siguiente del código y vuelve a la condición
+      }
+      cuenta++;
+      debugger;
+  }
+
+
+
+
+
+
