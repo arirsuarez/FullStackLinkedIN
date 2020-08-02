@@ -24,6 +24,7 @@ console.log('El cantante de Pearl Jam es: ' + nombre)
 //CONST: Contenedores de datos que no permiten cambiar el dato que almacenan a lo largo del programa mientras se ejecute
 
 const pi = 3.1416;
+const button = document.querySelector('.btn');
 
 // pi = 15; // Esto rompe ya que no se puede asignar un nuevo valor a const
 
@@ -252,7 +253,7 @@ var resultado = "";
 
   for (let i = 0; i < datoA; i++){
       // console.log(i);
-      debugger; // Permite debuggear en el navegador nuestra app
+    //  debugger; // Permite debuggear en el navegador nuestra app
   }
 
   //Cíclo Indefinido
@@ -261,7 +262,7 @@ var resultado = "";
 
   while(edad > 0) {
       edad--;
-      debugger;
+    //  debugger;
   }
 
   //DO WHILE
@@ -289,11 +290,118 @@ var resultado = "";
           continue; //Si el módulo es 0 continue salta la parte siguiente del código y vuelve a la condición
       }
       cuenta++;
-      debugger;
+     // debugger;
   }
 
 
 
+  // FUNCIONES / MéTODOS
+  // Agrupan un conjunto de instrucciones que pueden ser invocadas en la app por una palabra clave
+  // Todas las funciones devuelven algo: return
+  function saludar(){
+      //Indicamos la instrucción a ejecutar
+      var saludo = 'Hola!';
+      return saludo;
+  }
+
+  saludar();
+
+  //PARáMETROS DE UNA FUNCIóN
+  //Elementos mediante los cuales puede trabajar la función
+  function saludoPerson(nombre, apellido) {
+      var saludo = 'Hola'
+      var resultSaludo = saludo + ' ' + nombre + ' ' + apellido;
+      return resultSaludo; 
+  }
+
+  var resultSalPerson = saludoPerson('Daniel', 'Johns');
+
+  // Se puede dejar el valor de un parámetro por defecto inicianizandolo em la función
+  // function ejemplo (cantidad=0){
+        //return cantidad;
+//  }
+
+//Si no le pasamos ningún parámetro al invocar la función. Cantidad por default es 0
 
 
+//PARáMETROS REST
+//Recupera los parámetros en un array sin conocer cuántos va a haber 
 
+function recetaRest ( ...ingredientes) {
+    console.log('Ingredientes', ingredientes)
+}
+
+recetaRest('Fideos', 'Salsa');
+
+//PARáMETROS REST
+// Funcionan a la inversa de los Rest. Permiten recibir N cantidad de parámetros
+//asigna valores a los parámetros como Array
+
+function recetaSpread(ingrediente1, ingrediente2, ...restoIngredientes){
+    console.log('Ingrediente 1: ', ingrediente1);
+    console.log('Ingrediente 2: ', ingrediente2);
+    console.log('Otros ingredientes: ', restoIngredientes);
+}
+
+var ingredientesBase = ['Harina', 'Agua']
+recetaSpread(...ingredientesBase, 'Levadura', 'Salsa', 'Queso');
+
+//FUNCIONES ANóNIMAS
+//Permite no asignarle un nombre a un conjunto de instrucciones
+//Se usa comunmente en las callbacks o para aislar una función
+
+// (
+//     function(){
+//         var mensajeRecibida = 'Hola De Nuevo';
+//         console.log(mensajeRecibida);
+//     }
+// )()
+
+//Se guarda la función como variable
+var saludar = function(nombreSaludo){
+    var mensajeSaludo = 'Hola' + nombre;
+    return mensajeSaludo;
+}
+
+
+//CALLBACKS
+//Una función puede recibir funciones como parámetros
+
+function calcular(datoA, datoB, sumarCallBack, restarCallBack){
+    var sumaCB = datoA + datoB;
+    var restaCB = datoA - datoB;
+
+    sumarCallBack(sumaCB);
+    restarCallBack(restaCB);
+}
+
+calcular(2, 3, function(result){
+    console.log('Suma: ', result);
+}, function (result){
+    console.log('Resta: ', result);
+})
+
+
+//FAT ARROW | LAMBDA
+//Simplifica la sintáxis para escribir funciones
+
+var saludar = nombre => 'Hola' + nombre;
+var calcularFatArrow = (datoA, datoB) => {
+    var datoC = 5;
+    return datoA+datoB+datoC;
+}
+
+
+//THIS
+//Permite hacer referencia al Objeto con el que estoy trabajando.
+
+//Usando una función anónima se pede acceder a la etiqueta y su contenido solamente
+
+// button.addEventListener('click', function () {
+//     console.log(this.innerHTML);
+// })
+
+//Para poder acceder a la ventana completa se utiliza la fatArrow
+button.addEventListener('click', () => {
+    this.location = "http://www.google.com";
+})
