@@ -402,6 +402,71 @@ var calcularFatArrow = (datoA, datoB) => {
 // })
 
 //Para poder acceder a la ventana completa se utiliza la fatArrow
-button.addEventListener('click', () => {
-    this.location = "http://www.google.com";
+//button.addEventListener('click', () => {
+//    this.location = "http://www.google.com";
+// })
+
+
+
+
+//EVENTOS DEL MOUSE
+//addEventListener('click'/'mousover'/'mouseout')
+
+//EVENTOS DEL TECLADO
+//window.addEventListener('jeydown'/'keypress'/'keyup')
+window.addEventListener('keydown', function (event) {
+    console.log(String.fromCharCode(event.keyCode)) //event.keycode devuelve el código de la letra presionada, se pasa a String
 })
+
+//CARGA DE DOCUMENTO
+window.addEventListener('load', function(){
+    console.log('La web se cargó correctamente')
+})
+
+//EVENTOS MULTIMEDIA
+// video.addEventListener('play' function () {
+    // escucha cuando se da play al video
+// })
+
+// video.addEventListener('seeking', function () {
+    // escucha cuando se busca sobre la barra de video
+// })
+
+// video.addEventListener('ended', function () {
+    // escucha cuando termina el video
+    // console.log('se está buscando en el video/audio', this.currentTime)
+// })
+
+// TEMPORIZADORES
+// Automatiza en un intervalo de tiempo una acción
+
+var temporizador = setInterval(function() {
+    setColor();
+}, 2000);
+
+function setColor() {
+    var pagina = document.body;
+    pagina.style.backgroundColor = pagina.style.backgroundColor == 'blue' ? 'green' : 'blue';
+}
+
+function stopChangeColor() {
+    clearInterval(temporizador)
+}
+
+
+//VENTANAS DE ALERTA
+// Ventanas emergentes alert('Información a brindar')
+
+// VENTANA DE CONFIRMACIóN
+//Permite tomar acciones sobre un evento
+
+button.addEventListener('click', () => {
+    let resultConfirm = confirm('Deseas ir a Google?');
+    if(resultConfirm){
+        window.location = 'http://www.google.com'
+    }
+})
+
+
+// VENTANA SOLICITUD DE DATOS
+//prompt('Escriba un dato aqui') sirve para solicitar info al usuario mediante una ventana de alerta
