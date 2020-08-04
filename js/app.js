@@ -470,3 +470,63 @@ button.addEventListener('click', () => {
 
 // VENTANA SOLICITUD DE DATOS
 //prompt('Escriba un dato aqui') sirve para solicitar info al usuario mediante una ventana de alerta
+
+
+// PROPIEDADES NUMéRICAS
+
+//"MAX_VALUE", Number.MAX_VALUE; (Valor máximo que soporta JS)
+//"MIN_VALUE", Number.MIN_VALUE; (Valor mínimo que soporta JS)
+//"NEGATIVE_INFINITY", Number.NEGATIVE_INFINITY; (Objeto que significa infinito negativo)
+//"POSITIVE_INFINITY", Number.POSITIVE_INFINITY; (Objeto que significa infinito positivo)
+//"NaN", Number.Nan; (Not a Number)
+
+// MéTODOS NUMéRICOS
+//"Number", Number(cadenaDeTexto); Convierte un string en número
+//"parseInt", parseInt(cadenaDeTexto); Convierte una cadena de texto o número en entero
+//"parseFloat", parseFloat(cadenaDeTexto); Convierte una cadena de texto o número en float
+//"inNaN", isNaN(cadenaDeTexto); Es número? Da false, es cadena de txt
+//"isInteger", Number.isInteger(cadenaDeTexto); Es un entero? False
+
+//PROPIEDADES NUMéRICAS DE INSTANCIAS
+//"toExponential", numero.toExponential(4); numero e4
+//"toFixed", numero.toFixed(4); Maneja cantidad de decimales
+//"toPrecision", numero.toPrecision(); Maneja precisiones en decimales 
+//"toString", numero.toString(); Convierte el número en cadena de texto
+
+
+//STRING
+
+//MéTODOS
+//"indexOf", mensaje.indexOf('lo que quiero buscar'), busca la posición del primer match
+//"lastIndexOf", mensaje.lastIndexOf('lo que quiero buscar'), busca la posición del último match encontrado
+//"search", mensaje.search('lo que quiero buscar'), busca posición del texto del primer match, similar a indexOf
+//"search | con una expresión" mensaje.search(/parteDeMensaje/i), busca lo indicado entre /.../ y devuelve la posición. se le ingresa la i para que no distinga entre mayús
+
+//Si cualquiera de estos métodos devuelve la posición -1 quiere decir que no encontró coincidencia
+
+//"match", mensaje.match(/textoABuscar/gi), devuelve un arreglo con el texto buscado. g para buscar todas las coincidencias
+//"substr", mensaje.substr(6,11), busca desde la posición 6 y cuenta 11 caracteres y retorna el texto
+//"substring", mensaje.substring(6,17), busca desde la posición 6 a la posición 17.
+//"charAt", mensaje.charAt(3), devuelve el caracter en la posición 3.
+
+//"startswith", mensaje.startswith('texto', desde donde quiero que corrobore), boolean. Si msj comienza con texto true
+//"endsWith", mensaje.endsWith('texto')
+//"includes", mensaje.includes('texto')
+
+
+//"repeat", mensaje.repeat(numeroDeRepetición), repite mensaje n veces
+//"replace", mensaje.replace('textoARemplazar', 'textoNuevo'), no afecta el valor original
+//"slice", mensaje.slice(6, mensaje.length-6); "corta" el mensaje desde la posición inicial a la indicada
+//"split", mensaje.split(); retorna un arreglo palabra por palabra
+//"trim", mensaje.trim(); elimina espacios en blanco innecesario
+
+
+//PLANTILLAS Y LITERALES
+var lenguaje = 'JavaScript';
+var lenguaje2 = 'HTML';
+var plantilla = `Estamos creando una plantilla en ${lenguaje}, o ${lenguaje2}?`;
+
+var mensajeMultilinea = `
+Hola mundo,
+estoy haciendo un curso de ${lenguaje}.
+Esto es un una plantilla multilinea`;
